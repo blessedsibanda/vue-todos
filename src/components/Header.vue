@@ -1,14 +1,17 @@
 <template>
     <div class="bg-primary text-white text-center">
-        <h1>{{username}}'s To Dos</h1>
+        <h1>{{username}}'s To Dos
+            ( {{totalUnfinishedTodos}} remaining)
+        </h1>
     </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
     computed: {
-        ...mapState(['username', ''])
+        ...mapState(['username']),
+        ...mapGetters(['totalUnfinishedTodos']),
     }
 }
 </script>

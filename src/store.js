@@ -22,6 +22,9 @@ export default new Vuex.Store({
         return state.todoItems.filter(item => !item.done)
       }
       return state.todoItems
+    },
+    totalUnfinishedTodos(state) {
+      return state.todoItems.filter(item => !item.done).length
     }
   },
   mutations: {
